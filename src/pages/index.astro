@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+---
+
+<Layout title="Suppression virus informatique Le Mans - Expert en dépannage PC à domicile">
+  <Header />
+  <Hero />
+  <Services />
+  <section class="expertise">
+    <div class="container">
+      <h2>Votre Expert en Suppression de Virus au Mans</h2>
+      <div class="expertise-content">
+        <div class="expertise-text">
+          <p>
+            Spécialisé dans la <strong>suppression de virus informatique au Mans</strong>, nous intervenons rapidement à votre domicile pour :
+          </p>
+          <ul>
+            <li>Éliminer tous types de virus et malwares</li>
+            <li>Nettoyer et optimiser votre ordinateur</li>
+            <li>Sécuriser vos données personnelles</li>
+            <li>Installer une protection antivirus efficace</li>
+          </ul>
+          <p>
+            Notre expertise en <strong>dépannage informatique au Mans</strong> vous garantit une intervention professionnelle et des résultats durables.
+          </p>
+        </div>
+        <div class="expertise-stats">
+          <div class="stat">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Années d'expérience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">2000+</span>
+            <span class="stat-label">Clients satisfaits</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">24h</span>
+            <span class="stat-label">Délai d'intervention</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Testimonials />
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contactez votre expert en dépannage PC</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <a href="tel:0617959759" class="phone-number">📞 06 17 95 97 59</a>
+          <p class="availability">Disponible 7j/7 de 9h à 19h</p>
+          <div class="address">
+            <p>Intervention sur Le Mans et périphérie (20km)</p>
+            <p>Déplacement gratuit</p>
+          </div>
+        </div>
+        <div class="emergency-service">
+          <h3>Service d'urgence</h3>
+          <p>Virus, ransomware, panne subite ?</p>
+          <p>Intervention rapide sous 24h</p>
+          <a href="tel:0617959759" class="emergency-button">Appeler maintenant</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .expertise {
+    padding: 5rem 1rem;
+    background: white;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .expertise-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+  .expertise-text ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+  .expertise-text li {
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  .expertise-stats {
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+  }
+  .stat {
+    background: var(--accent);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .contact {
+    background: #f8f9fa;
+    padding: 5rem 1rem;
+  }
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .phone-number {
+    font-size: 2.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .emergency-service {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .emergency-button {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .emergency-button:hover {
+    background: var(--accent-dark);
+  }
+  @media (max-width: 768px) {
+    .expertise-content,
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Breadcrumb from '../components/common/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { text: 'Accueil', href: '/' },
+  { text: 'Contact' }
+];
+---
+
+<Layout title="Contact dépannage informatique Le Mans - Expert suppression virus">
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <section class="contact-hero">
+      <div class="container">
+        <h1>Contactez votre expert en dépannage informatique</h1>
+        <p class="lead">Intervention rapide sur Le Mans et sa périphérie</p>
+      </div>
+    </section>
+
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h2>Appelez-nous</h2>
+            <a href="tel:0617959759" class="phone">📞 06 17 95 97 59</a>
+            <p>Disponible 7j/7 de 9h à 19h</p>
+            <p>Intervention sous 24h</p>
+          </div>
+
+          <div class="contact-card">
+            <h2>Zone d'intervention</h2>
+            <ul class="area-list">
+              <li>Le Mans</li>
+              <li>Arnage</li>
+              <li>Allonnes</li>
+              <li>La Chapelle-Saint-Aubin</li>
+              <li>Yvré-l'Évêque</li>
+              <li>+ 20km autour du Mans</li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h2>Services</h2>
+            <ul class="services-list">
+              <li>Suppression virus</li>
+              <li>Dépannage PC</li>
+              <li>Maintenance</li>
+              <li>Installation antivirus</li>
+              <li>Optimisation système</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="map-section">
+          <h2>Notre zone d'intervention</h2>
+          <div class="map">
+            <!-- Intégration Google Maps ici -->
+            <img src="/images/map.jpg" alt="Zone d'intervention Le Mans" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .contact-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .lead {
+    font-size: 1.5rem;
+  }
+  .contact-info {
+    padding: 5rem 1rem;
+    background: white;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .contact-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .phone {
+    display: block;
+    font-size: 2rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+  .area-list, .services-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .area-list li, .services-list li {
+    margin-bottom: 0.5rem;
+  }
+  .map-section {
+    text-align: center;
+  }
+  .map {
+    margin-top: 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .map img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+  }
+</style>

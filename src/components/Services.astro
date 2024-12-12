@@ -1,0 +1,90 @@
+---
+import Card from './ui/Card.astro';
+
+const services = [
+  {
+    title: "Suppression de Virus",
+    description: "Élimination complète des virus, malwares, ransomwares et logiciels espions. Protection de vos données personnelles et professionnelles.",
+    features: [
+      "Analyse complète du système",
+      "Suppression des menaces",
+      "Protection antivirus",
+      "Sauvegarde des données"
+    ]
+  },
+  {
+    title: "Dépannage PC",
+    description: "Résolution rapide de tous vos problèmes informatiques : lenteurs, pannes, erreurs système, problèmes de démarrage.",
+    features: [
+      "Diagnostic précis",
+      "Réparation sur place",
+      "Optimisation système",
+      "Conseils personnalisés"
+    ]
+  },
+  {
+    title: "Maintenance Préventive",
+    description: "Entretenez votre ordinateur pour prévenir les pannes et maintenir ses performances optimales.",
+    features: [
+      "Nettoyage complet",
+      "Mise à jour système",
+      "Optimisation",
+      "Vérification sécurité"
+    ]
+  }
+];
+---
+<section class="services" id="services">
+  <div class="container">
+    <h2>Nos Services de Dépannage Informatique au Mans</h2>
+    <div class="services-grid">
+      {services.map(service => (
+        <Card>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <ul class="features-list">
+            {service.features.map(feature => (
+              <li>✓ {feature}</li>
+            ))}
+          </ul>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: 5rem 1rem;
+    background: #f8f9fa;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+  .features-list li {
+    margin-bottom: 0.5rem;
+    color: #666;
+  }
+</style>

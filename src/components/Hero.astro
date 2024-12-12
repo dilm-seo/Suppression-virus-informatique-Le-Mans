@@ -1,0 +1,81 @@
+---
+import Button from './ui/Button.astro';
+---
+<section class="hero">
+  <div class="hero-content">
+    <h1>Expert en Suppression de Virus Informatique au Mans</h1>
+    <p class="subtitle">Intervention rapide à domicile sur Le Mans et sa périphérie</p>
+    <div class="hero-cta">
+      <Button href="tel:0617959759" class="cta-button">📞 06 17 95 97 59</Button>
+      <p class="availability">Disponible 7j/7 - Intervention sous 24h</p>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">✓ Devis gratuit</span>
+      <span class="badge">✓ Déplacement offert</span>
+      <span class="badge">✓ Satisfaction garantie</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+  }
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+  }
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #f8f9fa;
+  }
+  .hero-cta {
+    margin-bottom: 2rem;
+  }
+  .cta-button {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .availability {
+    font-size: 1.2rem;
+    color: #f8f9fa;
+  }
+  .hero-badges {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    .subtitle {
+      font-size: 1.4rem;
+    }
+    .hero-badges {
+      gap: 1rem;
+    }
+  }
+</style>

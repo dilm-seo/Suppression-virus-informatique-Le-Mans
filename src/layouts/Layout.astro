@@ -1,0 +1,48 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content="Expert en suppression de virus informatique au Mans. Intervention rapide à domicile, dépannage PC et installation antivirus. Contactez-nous au 06 17 95 97 59" />
+		<meta name="keywords" content="suppression virus informatique Le Mans, dépannage informatique Le Mans, antivirus Le Mans, réparation ordinateur Le Mans" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="Expert en suppression de virus informatique au Mans. Intervention rapide à domicile pour tout dépannage PC." />
+		<meta property="og:type" content="website" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://www.depannage-informatique-lemans.fr" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: #e74c3c;
+		--accent-dark: #c0392b;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #fff;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.6;
+	}
+	* {
+		box-sizing: border-box;
+	}
+</style>

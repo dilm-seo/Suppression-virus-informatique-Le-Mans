@@ -1,0 +1,48 @@
+---
+import Navigation from './Navigation.astro';
+---
+<header class="header">
+  <div class="header-content">
+    <a href="/" class="logo">
+      <span class="logo-text">Dépannage PC Le Mans</span>
+    </a>
+    <Navigation />
+    <a href="tel:0617959759" class="header-phone">📞 06 17 95 97 59</a>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+  }
+  .header-phone {
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .header-phone:hover {
+    background: var(--accent-dark);
+  }
+</style>

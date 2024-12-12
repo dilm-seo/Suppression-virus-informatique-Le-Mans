@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Breadcrumb from '../components/common/Breadcrumb.astro';
+import Services from '../components/Services.astro';
+import ContactCTA from '../components/common/ContactCTA.astro';
+
+const breadcrumbItems = [
+  { text: 'Accueil', href: '/' },
+  { text: 'Services' }
+];
+---
+
+<Layout title="Services de dépannage informatique au Mans - Suppression virus et maintenance PC">
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <section class="services-hero">
+      <div class="container">
+        <h1>Services de Dépannage Informatique au Mans</h1>
+        <p class="lead">Expert en suppression de virus et maintenance informatique, nous intervenons rapidement à votre domicile sur Le Mans et sa périphérie.</p>
+      </div>
+    </section>
+
+    <Services />
+
+    <section class="service-details">
+      <div class="container">
+        <h2>Nos Solutions Complètes</h2>
+        
+        <div class="service-detail">
+          <h3>Suppression de Virus et Malwares</h3>
+          <p>Notre expertise en <strong>suppression de virus au Mans</strong> vous garantit :</p>
+          <ul>
+            <li>Détection et élimination des virus, malwares, ransomwares</li>
+            <li>Nettoyage complet du système</li>
+            <li>Protection antivirus adaptée à vos besoins</li>
+            <li>Récupération des données compromises</li>
+            <li>Conseils pour éviter les futures infections</li>
+          </ul>
+        </div>
+
+        <div class="service-detail">
+          <h3>Maintenance et Optimisation</h3>
+          <p>Un ordinateur lent ? Notre service de maintenance comprend :</p>
+          <ul>
+            <li>Nettoyage physique et logiciel</li>
+            <li>Optimisation des performances</li>
+            <li>Mise à jour du système et des pilotes</li>
+            <li>Suppression des logiciels inutiles</li>
+            <li>Défragmentation et optimisation du disque dur</li>
+          </ul>
+        </div>
+
+        <div class="service-detail">
+          <h3>Dépannage PC Urgent</h3>
+          <p>Pour tous vos problèmes informatiques urgents :</p>
+          <ul>
+            <li>Intervention rapide sous 24h</li>
+            <li>Diagnostic précis de la panne</li>
+            <li>Réparation sur place</li>
+            <li>Solutions adaptées à votre budget</li>
+            <li>Garantie satisfaction</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+</Layout>
+
+<style>
+  .services-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/services-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .lead {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .service-details {
+    padding: 5rem 1rem;
+    background: white;
+  }
+  .service-detail {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+  }
+  .service-detail h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .service-detail ul {
+    padding-left: 1.5rem;
+  }
+  .service-detail li {
+    margin-bottom: 0.5rem;
+  }
+</style>

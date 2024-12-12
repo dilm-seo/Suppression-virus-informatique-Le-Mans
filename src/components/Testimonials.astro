@@ -1,0 +1,90 @@
+---
+const testimonials = [
+  {
+    name: "Marie L.",
+    location: "Le Mans",
+    text: "Intervention rapide et efficace. Mon PC est comme neuf après la suppression des virus. Je recommande vivement !",
+    rating: 5
+  },
+  {
+    name: "Pierre D.",
+    location: "Arnage",
+    text: "Professionnel compétent et sympathique. Prix raisonnable pour un service de qualité.",
+    rating: 5
+  },
+  {
+    name: "Sophie M.",
+    location: "Le Mans",
+    text: "Excellent service à domicile. Problème de virus résolu en moins d'une heure.",
+    rating: 5
+  }
+];
+---
+<section class="testimonials">
+  <div class="container">
+    <h2>Avis de nos clients</h2>
+    <div class="testimonials-grid">
+      {testimonials.map(testimonial => (
+        <div class="testimonial-card">
+          <div class="stars">
+            {"★".repeat(testimonial.rating)}
+          </div>
+          <p class="testimonial-text">"{testimonial.text}"</p>
+          <div class="testimonial-author">
+            <span class="name">{testimonial.name}</span>
+            <span class="location">{testimonial.location}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 5rem 1rem;
+    background: white;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .testimonial-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .stars {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+  }
+  .name {
+    font-weight: bold;
+    color: #333;
+  }
+  .location {
+    color: #666;
+    font-size: 0.9rem;
+  }
+</style>

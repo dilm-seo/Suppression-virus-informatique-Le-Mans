@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Breadcrumb from '../components/common/Breadcrumb.astro';
+import ContactCTA from '../components/common/ContactCTA.astro';
+
+const breadcrumbItems = [
+  { text: 'Accueil', href: '/' },
+  { text: 'FAQ' }
+];
+
+const faqs = [
+  {
+    question: "Combien coûte la suppression d'un virus informatique au Mans ?",
+    answer: "Le tarif de base pour une suppression de virus est de 60€, incluant le diagnostic, la suppression et l'installation d'une protection antivirus. Le déplacement est gratuit sur Le Mans et sa périphérie."
+  },
+  {
+    question: "Dans quels délais intervenez-vous ?",
+    answer: "Nous intervenons sous 24h maximum sur Le Mans et sa périphérie. Pour les urgences, nous essayons d'intervenir le jour même selon disponibilité."
+  },
+  {
+    question: "Quels sont les signes d'un ordinateur infecté ?",
+    answer: "Les principaux signes sont : ralentissements importants, pop-ups intempestifs, modifications de la page d'accueil, programmes qui se lancent tout seuls, antivirus désactivé."
+  },
+  {
+    question: "Intervenez-vous à domicile ?",
+    answer: "Oui, nous nous déplaçons gratuitement à votre domicile sur Le Mans et dans un rayon de 20km. Cela permet de traiter le problème directement sur place."
+  }
+];
+---
+
+<Layout title="FAQ dépannage informatique Le Mans - Questions suppression virus">
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <section class="faq-hero">
+      <div class="container">
+        <h1>Questions Fréquentes</h1>
+        <p class="lead">Tout savoir sur nos services de dépannage informatique au Mans</p>
+      </div>
+    </section>
+
+    <section class="faq-content">
+      <div class="container">
+        <div class="faq-grid">
+          {faqs.map(faq => (
+            <div class="faq-item">
+              <h2>{faq.question}</h2>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+</Layout>
+
+<style>
+  .faq-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .faq-content {
+    padding: 5rem 1rem;
+    background: white;
+  }
+  .faq-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  .faq-item {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+  }
+  .faq-item h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .faq-item p {
+    color: #444;
+    line-height: 1.6;
+  }
+</style>

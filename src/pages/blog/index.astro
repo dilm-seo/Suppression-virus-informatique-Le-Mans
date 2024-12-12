@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Breadcrumb from '../../components/common/Breadcrumb.astro';
+import ContactCTA from '../../components/common/ContactCTA.astro';
+
+const breadcrumbItems = [
+  { text: 'Accueil', href: '/' },
+  { text: 'Blog' }
+];
+
+const articles = [
+  {
+    title: "Comment protéger son PC des virus au Mans ?",
+    slug: "proteger-pc-virus-le-mans",
+    excerpt: "Découvrez les meilleures pratiques pour protéger votre ordinateur des virus et malwares...",
+    date: "2024-01-15"
+  },
+  {
+    title: "Les signes d'un ordinateur infecté par un virus",
+    slug: "signes-ordinateur-infecte-virus",
+    excerpt: "Apprenez à reconnaître les symptômes d'une infection par un virus informatique...",
+    date: "2024-01-10"
+  },
+  {
+    title: "Pourquoi faire appel à un expert en suppression de virus ?",
+    slug: "pourquoi-expert-suppression-virus",
+    excerpt: "Les avantages de faire appel à un professionnel pour la suppression de virus...",
+    date: "2024-01-05"
+  }
+];
+---
+
+<Layout title="Blog dépannage informatique Le Mans - Conseils suppression virus">
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <h1>Blog Dépannage Informatique Le Mans</h1>
+        <p class="lead">Conseils et astuces pour protéger votre ordinateur</p>
+      </div>
+    </section>
+
+    <section class="blog-posts">
+      <div class="container">
+        <div class="posts-grid">
+          {articles.map(article => (
+            <article class="post-card">
+              <h2>{article.title}</h2>
+              <p class="date">{article.date}</p>
+              <p class="excerpt">{article.excerpt}</p>
+              <a href={`/blog/${article.slug}`} class="read-more">Lire la suite →</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+</Layout>
+
+<style>
+  .blog-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .blog-posts {
+    padding: 5rem 1rem;
+    background: white;
+  }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .post-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s;
+  }
+  .post-card:hover {
+    transform: translateY(-5px);
+  }
+  .date {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+  .excerpt {
+    color: #444;
+    margin: 1rem 0;
+  }
+  .read-more {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .read-more:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Breadcrumb from '../components/common/Breadcrumb.astro';
+import ContactCTA from '../components/common/ContactCTA.astro';
+
+const breadcrumbItems = [
+  { text: 'Accueil', href: '/' },
+  { text: 'Tarifs' }
+];
+
+const prices = [
+  {
+    title: "Suppression Virus",
+    price: "60€",
+    duration: "1h-2h",
+    features: [
+      "Analyse complète du système",
+      "Suppression des menaces",
+      "Installation antivirus",
+      "Conseils de protection"
+    ]
+  },
+  {
+    title: "Maintenance PC",
+    price: "50€",
+    duration: "1h-1h30",
+    features: [
+      "Nettoyage système",
+      "Optimisation performances",
+      "Mises à jour",
+      "Vérification sécurité"
+    ]
+  },
+  {
+    title: "Dépannage Urgent",
+    price: "80€",
+    duration: "1h-3h",
+    features: [
+      "Intervention sous 24h",
+      "Diagnostic complet",
+      "Réparation sur place",
+      "Garantie satisfaction"
+    ]
+  }
+];
+---
+
+<Layout title="Tarifs dépannage informatique Le Mans - Prix suppression virus PC">
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <section class="pricing-hero">
+      <div class="container">
+        <h1>Tarifs Dépannage Informatique Le Mans</h1>
+        <p class="lead">Des prix transparents et sans surprise pour tous vos besoins en informatique</p>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="container">
+        <div class="pricing-grid">
+          {prices.map(price => (
+            <div class="price-card">
+              <h3>{price.title}</h3>
+              <div class="price">
+                <span class="amount">{price.price}</span>
+                <span class="duration">/ {price.duration}</span>
+              </div>
+              <ul class="features">
+                {price.features.map(feature => (
+                  <li>✓ {feature}</li>
+                ))}
+              </ul>
+              <a href="tel:0617959759" class="cta-button">Appeler maintenant</a>
+            </div>
+          ))}
+        </div>
+
+        <div class="pricing-info">
+          <h2>Informations importantes</h2>
+          <ul>
+            <li>Déplacement gratuit sur Le Mans et 20km alentours</li>
+            <li>Devis gratuit avant intervention</li>
+            <li>Paiement CB, espèces ou chèque</li>
+            <li>Facture détaillée fournie</li>
+            <li>Garantie satisfaction</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+</Layout>
+
+<style>
+  .pricing-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/pricing-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .lead {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .pricing {
+    padding: 5rem 1rem;
+    background: white;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .price-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .price-card:hover {
+    transform: translateY(-5px);
+  }
+  .price {
+    margin: 1.5rem 0;
+  }
+  .amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent);
+  }
+  .duration {
+    color: #666;
+  }
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  .features li {
+    margin-bottom: 0.5rem;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .cta-button:hover {
+    background: var(--accent-dark);
+  }
+  .pricing-info {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+  }
+  .pricing-info ul {
+    padding-left: 1.5rem;
+  }
+  .pricing-info li {
+    margin-bottom: 0.5rem;
+  }
+</style>
